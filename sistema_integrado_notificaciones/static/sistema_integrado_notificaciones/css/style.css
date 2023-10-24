@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Vista mobile */
+
+/* Encabezado */
+
+header{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img{
+    height: 100%;
+}
+
+header h1{
+    display: none;
+}
+
+header nav{
+    display: none;
+}
+
+/* Contenido de la pagina */
+
+main{
+    padding: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main form{
+    margin-bottom: 20px;
+}
+
+#comunicados{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#comunicados .comunicado{
+    margin-bottom: 20px;
+}
+
+#comunicados-pantalla-grande{
+    display: none;
+}
+
+/* Vista web */
+
+@media screen and (min-width: 1000px) {
+    /* Encabezado */
+    header{
+        height: 30vh;
+        display: grid;
+        grid-template-areas: "imagen    titulo"
+                             "barraNav  barraNav";
+        grid-template-rows: 150px 20%;
+        grid-template-columns: 200px 1fr;
+    }
+
+    header img{
+        align-self: center;
+        justify-self: center;
+        grid-area: imagen;
+        
+    }
+
+    header h1{
+        display: block;
+        grid-area: titulo;
+        font-size: 3rem;
+    }
+
+    header nav{
+        display: block;
+        grid-area: barraNav;
+        padding-left: 200px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: whitesmoke;
+    }
+
+    header nav ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 50%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: start;
+    }
+
+    header nav ul li{
+        width: auto;
+        margin-right: 30px;
+    }
+
+    header nav ul li a{
+        text-decoration: none;
+        color: black
+    }
+
+    /* Contenidos de la pagina */
+
+    #comunicados{
+        width: 100%;
+        flex-flow: row wrap;
+        justify-content: space-around
+    }
+
+}
+
+/* vista Pantall grande */
+
+@media screen and (min-width: 1500px){
+    /* Encabezado */
+    header{
+        display: flex;
+        justify-content: start;
+        padding: 20px;
+    }
+
+    header img{
+        height: 100%;
+        margin-right: 20px;
+    }
+
+    header h1{
+        font-size: 4rem;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    /* Contenidos de la pagina */
+
+    #comunicados{
+        display: none;
+    }
+
+    main{
+        height: 70vh;
+    }
+
+    main form{
+        display: none;
+    }
+
+    #comunicados-pantalla-grande{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    #carrusel-comunicados{
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-item{
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-inner{
+        height: 100%;
+        width: 100%;
+    }
+
+    .centrar{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .comunicado{
+        height: 100%;
+        width: 1500px;
+    }
+
+    .card-title{
+        font-size: 5rem;
+    }
+
+    .card-subtitle{
+        font-size: 3rem;
+    }
+    
+    .card-text{
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    .logo-entidad{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 200px;
+    }
+
+}

@@ -1,0 +1,43 @@
+{% extends 'sistema_integrado_notificaciones/base.html '%}
+
+{% block content %}
+
+<form action="" method="get">
+    <select name="entidad" onchange="this.form.submit()">
+        {% for entidad in entidades%}
+        <option value="{{entidad}}">{{entidad}}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<section id="comunicados">
+    {% for comunicado in comunicados %}
+
+    {% include "sistema_integrado_notificaciones/comunicado.html" %}
+
+    {% endfor %}
+</section>
+
+<section id="comunicados-pantalla-grande">
+    <div id="carrusel-comunicados" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for comunicado in comunicados %}
+                <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                    <div class="centrar">
+                        {% include "sistema_integrado_notificaciones/comunicado-PG.html" %}
+                        
+                    </div>
+
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    
+</section>
+
+
+{% endblock %}
